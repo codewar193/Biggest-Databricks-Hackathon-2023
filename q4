@@ -1,0 +1,6 @@
+SELECT cc.categoryid, ch.channelname, v.viewername
+FROM programme p
+JOIN channel ch ON p.channelid = ch.channelid
+JOIN channelcategory cc ON ch.categoryid = cc.category
+JOIN viewers v ON p.programmeid = v.programmeid
+WHERE cc.categoryname NOT IN ('Sports', 'Movies');
